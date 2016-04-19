@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
     //----------------Audio config--------------------------
 
     private static final int AUDIO_RATE = 11025;
+  //  private static final int AUDIO_RATE = 8000;
     private static final int CHANNEL = AudioFormat.CHANNEL_IN_STEREO;
     private static final int FORMAT = AudioFormat.ENCODING_PCM_16BIT;
 
