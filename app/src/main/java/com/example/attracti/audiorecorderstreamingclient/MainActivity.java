@@ -1,13 +1,12 @@
 package com.example.attracti.audiorecorderstreamingclient;
 
 import android.media.AudioFormat;
+import android.media.AudioManager;
 import android.media.AudioRecord;
 import android.media.AudioTrack;
 import android.media.MediaRecorder;
-import android.os.Environment;
 import android.os.Bundle;
-
-import android.media.AudioManager;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -28,7 +27,9 @@ import java.net.URISyntaxException;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
+
 public class MainActivity extends AppCompatActivity {
+
 
     private static final String TAG = MainActivity.class.getSimpleName();
 
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
     static byte[] mockBytes;
     static byte[] receivedbytes = null;
     byte[] allbytes;
+
 
     private String mInputFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/servertest.wav";
     private String mOutputFileName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/test.wav";
@@ -54,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private final int DELAY = 5;
     private final int BUFFER_SCALE = 2;
     private final int TRACK_BUFFER_SIZE = AudioTrack.getMinBufferSize(AUDIO_RATE, CHANNEL, FORMAT);
-    private int RECORDER_BUFFER_SIZE = AudioRecord.getMinBufferSize(AUDIO_RATE, CHANNEL, FORMAT) * BUFFER_SCALE;
+    private int RECORDER_BUFFER_SIZE = AudioRecord.getMinBufferSize(AUDIO_RATE, CHANNEL, FORMAT)*BUFFER_SCALE;
 
     //audio track for play received data from server
     AudioTrack track = new AudioTrack(
@@ -180,6 +182,8 @@ public class MainActivity extends AppCompatActivity {
 
                     //reading data from MIC into buffer
                     RECORDER_BUFFER_SIZE = recorder.read(buffer, 0, buffer.length);
+
+
 
                     //send data to server
                     mWebSocketClient.send(buffer);

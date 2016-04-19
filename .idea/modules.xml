@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AudiorecorderStreamingClient.iml" filepath="$PROJECT_DIR$/AudiorecorderStreamingClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jspeex-0.9.7/jspeex-0.9.7.iml" filepath="$PROJECT_DIR$/jspeex-0.9.7/jspeex-0.9.7.iml" />
     </modules>
   </component>
 </project>
